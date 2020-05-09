@@ -1,0 +1,24 @@
+---
+title: "BLM_macromill"
+output: html_document
+---
+
+## データの読み込み
+```{r, comment="", echo=TRUE}
+(wd<-getwd())
+d_raw <- read.csv(paste0(wd, "/rawdata_first.csv"), fileEncoding = "Shift_JIS")
+# Shift-JISで漢字を含むcsv.データもエンコードできた
+```
+
+## 分析に必要なパッケージを読み込む
+```{r, cache=TRUE}
+install.packages("dplyr", repos = "https://www.r-project.org")
+install.packages("psyche", repos="https://www.r-project.org")
+```
+
+## 読み込んだデータの確認
+```{r, comment="", echo=TRUE}
+require(dplyr)
+glimpse(d_raw)
+```
+
